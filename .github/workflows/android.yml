@@ -1,4 +1,4 @@
-.github/workflows/android.yml
+
 name: APK Oluşturucu
 on: [push, workflow_dispatch]
 jobs:
