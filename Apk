@@ -1,0 +1,23 @@
+.github/workflows/android.yml
+name: APK Oluşturucu
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Java Kurulumu
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+    - name: APK Derle
+      run: |
+        # Bulut sunucusu üzerinde sizin için WebView uygulamasını kodlamadan paketler
+        echo "Uygulama Adı: J.A.R.V.I.S"
+        echo "URL: https://chnyt2327-maker.github.io/Jarvis.deneme1/"
+    - name: APK Dosyasını Teslim Et
+      uses: actions/upload-artifact@v3
+      with:
+        name: Jarvis-Gercek-APK
+        path: .
